@@ -1,0 +1,65 @@
+<h2>Employee Management</h2>
+<form [formGroup]="employeeForm">
+  <div class="employee_Form">
+    <div class="form-input">
+      <p>Name :</p>
+      <p><input type="text" formControlName="name" /></p>
+    </div>
+    <div class="form-input">
+      <p>Company Name:</p>
+      <p><input type="text" formControlName="company" /></p>
+    </div>
+
+    <div class="form-input">
+      <p>Email ID:</p>
+      <p><input type="email" formControlName="email" /></p>
+    </div>
+
+    <div class="form-input">
+      <p>Contact No:</p>
+      <p><input type="text" formControlName="contact" /></p>
+    </div>
+
+    <div class="form-input">
+      <p>Designation:</p>
+      <p><input type="text" formControlName="designation" /></p>
+    </div>
+  </div>
+  <div class="button-group">
+    <button (click)="onSubmit()" [disabled]="!employeeForm.valid">
+      {{ isEditMode ? "Update" : "Add" }} Employee
+    </button>
+    <button type="button" (click)="onClear()">Clear</button>
+  </div>
+</form>
+
+<h3>Employee List</h3>
+<table class="employee-table">
+  <thead>
+    <tr>
+      <th>Avatar</th>
+      <th>Name</th>
+      <th>Company</th>
+      <th>Email</th>
+      <th>Contact</th>
+      <th>Designation</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of employees; let i = index">
+      <td>
+        <p class="initial">{{ getInitials(emp.name) }}</p>
+      </td>
+      <td>{{ emp.name }}</td>
+      <td>{{ emp.company }}</td>
+      <td>{{ emp.email }}</td>
+      <td>{{ emp.contact }}</td>
+      <td>{{ emp.designation }}</td>
+      <td>
+        <button (click)="onEdit(i)">Edit</button>
+        <button class="delete-btn" (click)="onDelete(i)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
