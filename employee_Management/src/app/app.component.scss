@@ -1,0 +1,46 @@
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.employee-table th,
+.employee-table td {
+  border: 1px solid #000;
+  padding: 8px;
+  text-align: left;
+}
+
+.employee-table th {
+  background-color: #4ad6d8;
+}
+
+.delete-btn {
+  background-color: red;
+  color: white;
+  cursor: pointer;
+}
+.employee_Form {
+  display: flex;
+  gap: 1rem;
+}
+.form-input {
+  display: flex;
+  gap: 1rem;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.initial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+}
