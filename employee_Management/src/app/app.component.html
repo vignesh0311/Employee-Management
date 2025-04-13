@@ -12,7 +12,14 @@
 
     <div class="form-input">
       <p>Email ID:</p>
-      <p><input type="email" formControlName="email" /></p>
+      <div>
+        <p><input type="email" formControlName="email" /></p>
+        <span
+          *ngIf="employeeForm.get('email')?.touched && employeeForm.get('email')?.errors?.['email']"
+          class="error"
+          >Enter valid Email</span
+        >
+      </div>
     </div>
 
     <div class="form-input">

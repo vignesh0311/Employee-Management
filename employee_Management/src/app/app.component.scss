@@ -22,10 +22,14 @@
 .employee_Form {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 .form-input {
   display: flex;
   gap: 1rem;
+  .error {
+    color: rgb(201, 26, 26);
+  }
 }
 
 .button-group {
